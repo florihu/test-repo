@@ -1,2 +1,2 @@
 # test
-This project is an test to get familiar with GitHub
+This project is a aggregation of all stuff that is not aggregatable in other projects.
