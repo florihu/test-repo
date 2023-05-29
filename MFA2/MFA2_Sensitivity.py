@@ -71,6 +71,26 @@ for j, element in enumerate(factors):
 
 fig.suptitle('Scenario comparison wood japan (vertical: outcome , horizontal: uncertainty factors )', fontsize=20)
 plt.savefig('Scenario comparison wood japan')
-plt.close()
+plt.show()
+
+
+#%% PLOT RESULTS
+fig, ax = plt.subplots(4, 4, figsize=(20, 20), sharey=False)
+
+for j, element in enumerate(factors):
+    for i, column in enumerate(["inflow", "outflow", "nas", "stock"]):
+
+        sns.lineplot(
+            data=(timeseries_scenario[element,.9][column]-timeseries_scenario[element,1][column])/ timeseries_scenario[element,1][column]*100, ax=ax[i, j], label="scenario .9"
+        )
+        sns.lineplot(
+            data=(timeseries_scenario[element,1.1][column]-timeseries_scenario[element,1][column])/timeseries_scenario[element,1][column]*100, ax=ax[i, j], label="scenario 1.1"
+        )
+        ax[i, j].set_title(f"{element}")
+
+fig.suptitle('Scenario comparison wood japan relative (vertical: outcome , horizontal: uncertainty factors ) (%)', fontsize=20)
+plt.savefig('Scenario comparison wood japan relative')
+plt.show()
+
 
 
