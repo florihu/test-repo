@@ -1,13 +1,7 @@
-import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
-from scipy.stats import weibull_min
-from scipy.stats import norm
-import seaborn as sns
-from scipy.linalg import toeplitz, solve
 # Import all the model functions
 
-from stock_flow_model import *
+from Final_Assignment.stock_flow_model import *
 
 
 #%% Load data
@@ -93,4 +87,13 @@ plt.savefig('Scenario comparison wood japan relative')
 plt.show()
 
 
+
+#%%
+import numpy as np
+decision = np.random(10)
+
+if decision>5:
+    print('LEIDEN')
+else:
+    print('DH')
 
